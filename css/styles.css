@@ -121,6 +121,7 @@ body {
 .page-header-container {
     display: flex;
     align-items: center;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .menu-item {
@@ -418,7 +419,6 @@ body {
 .footer-container {
     display: flex;
     align-items: baseline;
-    gap: 120px;
 }
 
 .social-media-text {
@@ -433,6 +433,7 @@ body {
 
 .footer-left {
     width: 264px;
+    margin-right: 120px;
 }
 
 /* ==========/Footer */
