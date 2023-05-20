@@ -7,7 +7,11 @@
     --logo-secondary-color-theme-light: #2E2F42;
     --menu-link-color: #2E2F42;
     --description-text-color: #434455;
+    --transition-properties-modal-open-btn: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-properties: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-properties-bgc: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-properties-customers: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-properties-portfolio: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -89,6 +93,15 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: var(--transition-properties);
+
+}
+
+.contact-link:hover,
+.contact-link:focus,
+.menu-link:hover,
+.menu-link:focus {
+    color: var(--accent-color);
 }
 
 .header-list {
@@ -194,39 +207,6 @@ body {
 /* ==========/Section */
 
 
-/* Links========== */
-.contact-link:hover,
-.contact-link:focus,
-.menu-link:hover,
-.menu-link:focus {
-    color: var(--accent-color);
-}
-
-.social-list-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--logo-web-color);
-}
-
-.social-list-link:hover,
-.social-list-link:focus {
-    background-color: var(--accent-color);
-}
-
-.social-list-link-theme-dark:hover,
-.social-list-link-theme-dark:focus {
-    background-color: #31D0AA;
-}
-
-
-
-
-/* ==========/Links */
-
 
 /* Hero========== */
 .hero-header {
@@ -282,6 +262,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
+    transition: var(--transition-properties-bgc);
 }
 
 .modal-open-btn:hover,
@@ -371,6 +352,22 @@ body {
     margin-bottom: 8px;
 }
 
+.social-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--logo-web-color);
+    transition: var(--transition-properties-bgc);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--accent-color);
+}
+
 /* ==========/Team section */
 
 
@@ -391,6 +388,7 @@ body {
     border: 1px solid #8E8F99;
     border-radius: 4px;
     color: #8e8f99;
+    transition: var(--transition-properties-customers);
 }
 
 .customers-list-link:hover,
@@ -456,6 +454,11 @@ body {
     margin-right: 120px;
 }
 
+.social-list-link-theme-dark:hover,
+.social-list-link-theme-dark:focus {
+    background-color: #31D0AA;
+}
+
 /* ==========/Footer */
 
 
@@ -505,6 +508,11 @@ body {
     padding: 12px 24px;
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    ;
 }
 
 .portfolio-filter-btn:hover,
@@ -556,6 +564,7 @@ body {
 
 .portfolio-link {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ==========/Portfolio img */
@@ -574,6 +583,8 @@ body {
     overflow: auto;
     transform: translatey(100%);
     transition: var(--transition-properties-portfolio);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 
 .portfolio-list-img-wrapper {
@@ -621,6 +632,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+    transition: var(--transition-properties-modal-open-btn);
 }
 
 .modal {
@@ -628,10 +640,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     width: 408px;
-    height: 584px;
+    min-height: 576px;
     background-color: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -647,6 +663,18 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     background-color: #E7E9FC;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: var(--accent-color);
+    border: none;
+    fill: #ffffff;
 }
 
 .is-hidden {
